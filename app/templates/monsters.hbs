@@ -3,11 +3,13 @@
     <p>Monster list</p>
     <ul class="monsters list-unstyled">
     {{#each model as |monster|}}
-      <li class="monster">
-        {{monster.name}}, level {{monster.level}}
-        <br>
-        <img src={{monster.imageUrl}} />
-      </li>
+      {{#link-to 'monsters.monster' monster}}
+        <li class="monster">
+          {{monster.name}}, level {{monster.level}}
+          <br>
+          <img src={{monster.imageUrl}} />
+        </li>
+      {{/link-to}}
     {{/each}}
     </ul>
   </div>

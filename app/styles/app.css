@@ -3,12 +3,13 @@ li img {
 }
 
 li.monster {
-  border: 2px solid #f8e94d;
+  border: 2px solid black;
   text-align: center;
   border-radius: 7px;
   margin: 5px;
   max-width: 140px;
   background-color: #d4c1d4;
+  padding: 5px;
 }
 li.monster img {
   max-height: 100px;
@@ -21,7 +22,6 @@ a {
   border-width: 15px;
   width: 300px;
   height: 500px;
-  border-radius: 10px;
   text-align: center;
   background-image: radial-gradient(#dacada, #b494b4);
   padding: 5px 20px;
@@ -33,6 +33,6 @@ a {
 }
 .monster-card img {
   max-width: 200px;
-  border: 5px #f8e94d solid;
+  /*border: 5px #f8e94d solid;*/
   margin: 10px;
 }
