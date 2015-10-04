@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-6 col-xs-6">
+  <div class="col-sm-5 col-xs-6">
     <ul class="monsters list-unstyled">
       {{#each model as |monster|}}
         {{#link-to 'monsters.monster' monster}}
@@ -12,7 +12,8 @@
       {{/each}}
     </ul>
   </div>
-  <div class="col-sm-6 col-xs-6">
+  <div class="col-sm-7 col-xs-6">
     {{outlet}}
+    {{team-lineup}}
   </div>
 </div>

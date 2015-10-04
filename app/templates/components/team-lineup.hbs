@@ -1,7 +1,14 @@
-<ul class="team-lineup">
-  {{#each teamMembers as |monster|}}
-    <li class="team-member">
-      {{monster.name}}
-    </li>
-  {{/each}}
-</ul>
+<h1>Current Team</h1>
+<div class="team-lineup row">
+  <ul class="list-unstyled">
+    {{#each teamMembers as |monster|}}
+      <li class="col-xs-6 col-sm-4 col-md-2">
+        <div class="team-member">
+          {{monster.name}}, lvl {{monster.level}}
+          <br>
+          <img src={{monster.imageUrl}} />
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>

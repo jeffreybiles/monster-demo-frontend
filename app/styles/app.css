@@ -2,7 +2,7 @@ li img {
   max-height: 100px;
 }
 
-li.monster {
+li.monster, li .team-member {
   border: 2px solid black;
   text-align: center;
   border-radius: 7px;
@@ -14,6 +14,16 @@ li.monster {
 li.monster img {
   max-height: 100px;
 }
+
+.team-lineup li {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+li .team-member img {
+  max-height: 50px;
+}
+
 a {
   color: black;
 }
@@ -21,7 +31,7 @@ a {
   border-image: linear-gradient(30deg, #efdb09 0%, #faef7e 15%, #f8e94d 30%, #fbf297 50%, #f8e94d 70%, #f6e426 85%, #f9ec66 100%) 1%;
   border-width: 15px;
   width: 300px;
-  height: 500px;
+  min-height: 300px;
   text-align: center;
   background-image: radial-gradient(#dacada, #b494b4);
   padding: 5px 20px;
@@ -33,6 +43,14 @@ a {
 }
 .monster-card img {
   max-width: 200px;
+  max-height: 200px;
   /*border: 5px #f8e94d solid;*/
   margin: 10px;
+}
+
+.team-lineup {
+  min-height: 100px;
+  min-width: 100px;
+  border-radius: 10px;
+  border: black 2px solid;
 }
