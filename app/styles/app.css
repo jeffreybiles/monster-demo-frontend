@@ -1,0 +1,38 @@
+li img {
+  max-height: 100px;
+}
+
+li.monster {
+  border: 2px solid #f8e94d;
+  text-align: center;
+  border-radius: 7px;
+  margin: 5px;
+  max-width: 140px;
+  background-color: #d4c1d4;
+}
+li.monster img {
+  max-height: 100px;
+}
+a {
+  color: black;
+}
+.monster-card {
+  border-image: linear-gradient(30deg, #efdb09 0%, #faef7e 15%, #f8e94d 30%, #fbf297 50%, #f8e94d 70%, #f6e426 85%, #f9ec66 100%) 1%;
+  border-width: 15px;
+  width: 300px;
+  height: 500px;
+  border-radius: 10px;
+  text-align: center;
+  background-image: radial-gradient(#dacada, #b494b4);
+  padding: 5px 20px;
+}
+.monster-card .name {
+  float: left;
+  font-size: 2em;
+  font-weight: bold;
+}
+.monster-card img {
+  max-width: 200px;
+  border: 5px #f8e94d solid;
+  margin: 10px;
+}

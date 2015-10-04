@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-sm-3 col-xs-6">
+    <p>Monster list</p>
+    <ul class="monsters list-unstyled">
+    {{#each model as |monster|}}
+      <li class="monster">
+        {{monster.name}}, level {{monster.level}}
+        <br>
+        <img src={{monster.imageUrl}} />
+      </li>
+    {{/each}}
+    </ul>
+  </div>
+  <div class="col-sm-9 col-xs-6">
+    {{outlet}}
+  </div>
+</div>
