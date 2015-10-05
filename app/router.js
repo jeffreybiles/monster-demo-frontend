@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('monsters', function(){
     this.route('monster', {path: ':monster_id'})
   });
+  this.route('users');
 });
 
 export default Router;
