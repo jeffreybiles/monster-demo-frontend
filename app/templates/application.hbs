@@ -1,5 +1,13 @@
 <div class="container">
-  <h2 id="title">Monster Cards</h2>
+  <div class="pull-right">
+    {{#if session.currentUser}}
+      <span {{action 'logout'}} style="cursor: pointer;">Logout {{session.currentUser.email}}</span>
+    {{else}}
+      {{#link-to 'users'}}Login{{/link-to}}
+    {{/if}}
+    ---
+    {{#link-to 'monsters'}}Monsters{{/link-to}}
+  </div>
 
   {{outlet}}
 </div>
