@@ -1,7 +1,7 @@
 <h1>Current Team</h1>
 <div class="team-lineup row">
   <ul class="list-unstyled">
-    {{#each teamMembers as |monster|}}
+    {{#each currentTeam.monsters as |monster|}}
       {{#link-to 'monsters.monster' monster}}
         <li class="col-xs-6 col-sm-4 col-md-2">
           <div class="team-member taken">
