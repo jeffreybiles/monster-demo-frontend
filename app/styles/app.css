@@ -11,8 +11,17 @@ li.monster, li .team-member {
   background-color: #d4c1d4;
   padding: 5px;
 }
+li.team-member {
+  min-height: 110px;
+}
 li.monster img {
   max-height: 100px;
+}
+li.monster.taken, .team-member.taken {
+  background-color: #caa;
+}
+.monster-card.taken {
+  background-image: radial-gradient(#caa, #b49494);
 }
 
 .team-lineup li {
@@ -50,7 +59,6 @@ a {
 
 .team-lineup {
   min-height: 100px;
-  min-width: 100px;
   border-radius: 10px;
   border: black 2px solid;
 }
