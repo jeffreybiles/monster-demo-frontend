@@ -1,6 +1,6 @@
-import DS from 'ember-data';
+import ActiveModelAdapter from 'active-model-adapter';
 
-export default DS.JSONAPIAdapter.extend({
+export default ActiveModelAdapter.extend({
   "port": 4200,
   // "host": "0.0.0.0",
   "live-reload": true,
