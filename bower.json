@@ -12,6 +12,7 @@
     "jquery": "^1.11.3",
     "loader.js": "ember-cli/loader.js#3.2.1",
     "qunit": "~1.18.0",
-    "bootstrap": "~3.3.2"
+    "bootstrap": "~3.3.2",
+    "js-cookie": "~2.0.3"
   }
 }
