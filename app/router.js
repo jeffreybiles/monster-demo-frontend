@@ -10,7 +10,8 @@ Router.map(function() {
     this.route('monster', {path: ':monster_id'})
   });
   this.route('users');
-  this.route('about')
+  this.route('about');
+  this.route('authenticated');
 });
 
 export default Router;
