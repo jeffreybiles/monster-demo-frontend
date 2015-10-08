@@ -1,12 +1,6 @@
 import Ember from 'ember';
+import Authenticated from '../mixins/authenticated-route';
 
-export default Ember.Route.extend({
-  session: Ember.inject.service(),
-  beforeModel(transition){
-    if(!this.get('session.isLoggedIn')){
-      var loginController = this.controllerFor('users');
-      loginController.set('previousTransition', transition);
-      this.transitionTo('users')
-    }
-  }
+export default Ember.Route.extend(Authenticated, {
+
 });
