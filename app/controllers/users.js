@@ -5,7 +5,14 @@ export default Ember.Controller.extend({
   actions: {
     login(user){
       this.get("session").login(user)
-      this.transitionToRoute("monsters")
+      var previousTransition = this.get('previousTransition');
+      if (previousTransition) {
+        this.set('previousTransition', null);
+        previousTransition.retry();
+      } else {
+        // Default back to homepage
+        this.transitionToRoute('index');
+      }
     }
   }
 })
