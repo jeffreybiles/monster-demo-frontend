@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   currentUser: null,
+  isLoggedIn: Ember.computed.bool('currentUser'),
   store: Ember.inject.service(),
   login(user){
     this.set("currentUser", user)
