@@ -24,7 +24,7 @@ export default Ember.Controller.extend(EmberValidations, {
           this.get('flashMessages').danger(reason)
         })
       }).catch((errors)=>{
-        displayFlashErrors(this.get('errors'));
+        displayFlashErrors(this.get('errors'), this.get('flashMessages'));
       })
     }
   },

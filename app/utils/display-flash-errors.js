@@ -1,9 +1,9 @@
-export default function(errorHash){
+export default function(errorHash, flashMessages){
   var errorKeys = Object.keys(errorHash);
-  this.get('flashMessages').clearMessages();
+  flashMessages.clearMessages();
   errorKeys.forEach((key)=>{
-    errorHashes[key].forEach((error)=>{
-      this.get('flashMessages').danger(`${key} ${error}`, {sticky: true})
+    errorHash[key].forEach((error)=>{
+      flashMessages.danger(`${key} ${error}`, {sticky: true})
     })
   })
 }
