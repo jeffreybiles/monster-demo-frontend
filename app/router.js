@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('users');
   this.route('about');
   this.route('authenticated');
+  this.route('login');
 });
 
 export default Router;

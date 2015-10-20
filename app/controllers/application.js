@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   actions: {
     logout(){
       this.get("session").logout()
-      this.transitionToRoute('users')
+      this.transitionToRoute('login')
     }
   }
 })

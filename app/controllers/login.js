@@ -14,5 +14,5 @@ export default Ember.Controller.extend({
         this.transitionToRoute('index');
       }
     }
-  }
+  }  
 })
