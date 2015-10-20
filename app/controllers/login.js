@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import EmberValidations from 'ember-validations';
+import displayFlashErrors from '../utils/display-flash-errors';
 
 export default Ember.Controller.extend(EmberValidations, {
   validations: {
@@ -23,7 +24,7 @@ export default Ember.Controller.extend(EmberValidations, {
           this.get('flashMessages').danger(reason)
         })
       }).catch((errors)=>{
-        this.displayFlashErrors(this.get('errors'));
+        displayFlashErrors(this.get('errors'));
       })
     }
   },
@@ -37,13 +38,4 @@ export default Ember.Controller.extend(EmberValidations, {
       this.transitionToRoute('index');
     }
   },
-  displayFlashErrors(errorHashes){
-    var errorKeys = Object.keys(errorHashes);
-    this.get('flashMessages').clearMessages();
-    errorKeys.forEach((key)=>{
-      errorHashes[key].forEach((error)=>{
-        this.get('flashMessages').danger(`${key} ${error}`, {sticky: true})
-      })
-    })
-  }
 })
