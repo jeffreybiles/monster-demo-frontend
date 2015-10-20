@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
     login(){
       let { userName, password } = this.getProperties('userName', 'password');
       this.get("session").login(userName, password).then(()=>{
-        // TODO: put in a flash message here
+        this.get('flashMessages').success('You have signed in succesfully')
         var previousTransition = this.get('previousTransition');
         if (previousTransition) {
           this.set('previousTransition', null);
@@ -16,8 +16,7 @@ export default Ember.Controller.extend({
           this.transitionToRoute('index');
         }
       }).catch((reason)=>{
-        console.log("error: ", reason)
-        // TODO: put in a flash message here
+        this.get('flashMessages').danger(reason)
       })
     }
   }
