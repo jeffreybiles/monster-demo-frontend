@@ -4,7 +4,7 @@
       {{#if session.currentUser}}
         <span {{action 'logout'}} style="cursor: pointer;">Logout {{session.currentUser.email}}</span>
       {{else}}
-        {{#link-to 'users'}}Login{{/link-to}}
+        {{#link-to 'login'}}Login{{/link-to}}
       {{/if}}
     </div>
     {{link-to 'Monsters' 'monsters'}}
