@@ -11,6 +11,10 @@
     {{link-to 'About' 'about'}}
     {{link-to 'Authenticated' 'authenticated'}}
   </div>
-
+  <div class="flash-messages">
+    {{#each flashMessages.queue as |flash|}}
+      {{flash-message flash=flash}}
+    {{/each}}
+  </div>
   {{outlet}}
 </div>
