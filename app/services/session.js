@@ -6,21 +6,29 @@ export default Ember.Service.extend({
   store: Ember.inject.service(),
   login(userName, password){
     return new Promise((resolve, reject)=>{
-      if(userName == 'emberscreencasts' && password == 'awesome'){
-        this.get('store').findAll('user').then((response)=>{
-          var user = response.get('firstObject')
-          this.set("currentUser", user)
-          Cookies.set('userId', user.id)
-          resolve()
-        })
-      } else {
+      Ember.$.ajax({
+        method: "POST",
+        url: '/sessions',
+        data: {
+          email: userName,
+          password: password
+        }
+      }).then((data)=>{
+        var token = data['authentication_token']
+        var user_id = data['user_id']
+        Cookies.set('userId', user_id)
+        Cookies.set('authenticationToken', token)
+        this.initializeFromCookie()
+        resolve()
+      }, ()=>{
         reject('Username and password did not match')
-      }
+      })
     })
   },
   logout(){
     this.set("currentUser", null)
     Cookies.remove('userId')
+    Cookies.remove('authenticationToken')
   },
   initializeFromCookie: function(){
     var userId = Cookies.get('userId');
