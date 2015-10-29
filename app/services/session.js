@@ -25,6 +25,27 @@ export default Ember.Service.extend({
       })
     })
   },
+  register(userName, password){
+    return new Promise((resolve, reject)=>{
+      Ember.$.ajax({
+        method: "POST",
+        url: '/users',
+        data: {
+          email: userName,
+          password: password
+        }
+      }).then((data)=>{
+        var token = data['authentication_token']
+        var user_id = data['user_id']
+        Cookies.set('userId', user_id)
+        Cookies.set('authenticationToken', token)
+        this.initializeFromCookie()
+        resolve()
+      }, (response)=>{
+        reject(`Server error: ${Ember.get(response, 'responseJSON.error')}`)
+      })
+    })
+  },
   logout(){
     this.set("currentUser", null)
     Cookies.remove('userId')
