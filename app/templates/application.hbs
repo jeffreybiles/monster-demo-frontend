@@ -5,6 +5,7 @@
         <span {{action 'logout'}} style="cursor: pointer;">Logout {{session.currentUser.email}}</span>
       {{else}}
         {{#link-to 'login'}}Login{{/link-to}}
+        {{#link-to 'register'}}Register{{/link-to}}
       {{/if}}
     </div>
     {{link-to 'Monsters' 'monsters'}}
