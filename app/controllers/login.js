@@ -16,7 +16,7 @@ export default Ember.Controller.extend(EmberValidations, {
   actions: {
     login(){
       let {userName, password} = this.getProperties('userName', 'password');
-      this.get("session").login(userName, password).then(()=>{
+      this.get("session").authenticate('authenticator:oauth2', userName, password).then(()=>{
         this.get('flashMessages').success('You have signed in successfully')
         this.transitionToPreviousRoute()
       }).catch((reason)=>{

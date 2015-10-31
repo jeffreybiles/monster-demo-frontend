@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   session: Ember.inject.service(),
   actions: {
     logout(){
-      this.get("session").logout()
+      this.get("session").invalidate()
       this.transitionToRoute('login')
     }
   }

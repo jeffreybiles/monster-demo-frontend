@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="pull-right">
-      {{#if session.currentUser}}
+      {{#if session.isAuthenticated}}
         <span {{action 'logout'}} style="cursor: pointer;">Logout {{session.currentUser.email}}</span>
       {{else}}
         {{#link-to 'login'}}Login{{/link-to}}
