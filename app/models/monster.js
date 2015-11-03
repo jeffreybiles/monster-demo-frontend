@@ -5,6 +5,7 @@ export default DS.Model.extend({
   level: DS.attr('number'),
   imageUrl: DS.attr('string'),
   teamMemberships: DS.hasMany('team-membership'),
+  price: DS.attr('number'),
 
   currentTeam: Ember.inject.service(),
   onTeam: Ember.computed('currentTeam.monsters.[]', function(){
