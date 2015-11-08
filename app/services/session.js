@@ -5,7 +5,7 @@ export default Ember.Service.extend({
   isLoggedIn: Ember.computed.bool('currentUser'),
   store: Ember.inject.service(),
   login(userName, password){
-    return new Promise((resolve, reject)=>{
+    return new Ember.RSVP.Promise((resolve, reject)=>{
       Ember.$.ajax({
         method: "POST",
         url: '/sessions',
@@ -19,7 +19,7 @@ export default Ember.Service.extend({
         Cookies.set('userId', user_id)
         Cookies.set('authenticationToken', token)
         this.initializeFromCookie()
-        resolve()
+        resolve(user_id)
       }, ()=>{
         reject('Username and password did not match')
       })

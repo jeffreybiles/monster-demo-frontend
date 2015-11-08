@@ -3,7 +3,7 @@ import Ember from 'ember';
 // This is just a converter from Dollars to Yen
 // Could generalize later
 export default Ember.Service.extend({
-  currentCurrency: 'Yen',
+  currentCurrency: 'Dollars',
   exchangeRate: 121.60,
   isInDollars: Ember.computed.equal('currentCurrency', 'Dollars'),
   exchange(dollarAmount){
