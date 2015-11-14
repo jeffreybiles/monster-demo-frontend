@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-sm-5 col-xs-6">
     <ul class="monsters list-unstyled">
-      {{#each model as |monster|}}
+      {{#each model.monsters as |monster|}}
         {{#link-to 'monsters.monster' monster}}
           <li class="monster col-sm-4 col-xs-6 {{if monster.onTeam 'taken'}}">
             {{monster.name}}, level {{monster.level}}
@@ -22,5 +22,11 @@
   <div class="col-sm-7 col-xs-6">
     {{outlet}}
     {{team-lineup}}
+    <h2>Worlds</h2>
+    {{#each model.worlds as |world|}}
+      <div class="world">
+        {{world.name}}: {{world.environment}}
+      </div>
+    {{/each}}
   </div>
 </div>
