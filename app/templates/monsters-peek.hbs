@@ -1,0 +1,13 @@
+<ul class="monsters list-unstyled">
+  {{#each model as |monster|}}
+    <li class="monster col-sm-4 col-xs-6">
+      {{monster.name}}, level {{monster.level}}
+      <br>
+      <img src={{monster.imageUrl}} />
+      <br>
+      {{price price=monster.price}}
+    </li>
+  {{else}}
+    Sorry, no monsters loaded yet.
+  {{/each}}
+</ul>

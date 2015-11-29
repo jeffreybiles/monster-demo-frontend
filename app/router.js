@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('authenticated');
   this.route('login');
   this.route('register');
+  this.route('monsters-peek');
 });
 
 export default Router;
