@@ -1,4 +1,4 @@
-export function initialize( container, application ) {
+export function initialize(app) {
   Ember.$.ajaxPrefilter(function(options, originalOptions, jqXHR) {
     var token = Cookies.get('authenticationToken')
     if(token){
