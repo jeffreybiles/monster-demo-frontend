@@ -1,8 +1,15 @@
 <h2>Edit the Monster</h2>
 
 {{monster-form monster=model}}
+{{#each changedAttributesHash as |attribute|}}
+  {{attribute.key}}: {{attribute.earlierValue}} -> {{attribute.currentValue}}
+  <br>
+{{/each}}
 <button class="btn" {{action 'save'}}>
   Save
+</button>
+<button class="btn" {{action 'cancel'}}>
+  Cancel
 </button>
 <button class="btn pull-right" {{action 'destroy'}} style="color: #800">
   Put monster to sleep :(
