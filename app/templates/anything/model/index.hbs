@@ -1,0 +1,5 @@
+<ul>
+{{#each model.records as |record|}}
+  <li>{{#link-to 'anything.model.record' record}}{{record.id}}{{/link-to}}</li>
+{{/each}}
+</ul>

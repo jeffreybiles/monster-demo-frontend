@@ -18,6 +18,13 @@ Router.map(function() {
   this.route('login');
   this.route('register');
   this.route('monsters-peek');
+  this.route('anything', function(){
+    this.route('model', {path: ':model_name'}, function(){
+      this.route('record', {path: ':record_id'}, function(){
+        
+      })
+    })
+  })
 });
 
 export default Router;

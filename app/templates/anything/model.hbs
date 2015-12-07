@@ -1,0 +1,7 @@
+<b>{{model.modelObject.name}}</b>
+{{#each model.modelObject.klass.attributes as |attr|}}
+  <br>
+  {{attr.name}}: {{attr.type}}
+{{/each}}
+<hr>
+{{outlet}}

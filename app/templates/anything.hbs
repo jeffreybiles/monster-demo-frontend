@@ -1,0 +1,11 @@
+<div class="col-sm-3">
+  <h2>Available Models</h2>
+  <ul>
+  {{#each model as |dataModel|}}
+    <li>{{#link-to 'anything.model' dataModel.name}}{{dataModel.name}}{{/link-to}}</li>
+  {{/each}}
+  </ul>
+</div>
+<div class="col-sm-9">
+  {{outlet}}
+</div>
