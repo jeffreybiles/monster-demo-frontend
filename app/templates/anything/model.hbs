@@ -1,7 +1,13 @@
 <b>{{model.modelObject.name}}</b>
+<br>
+{{#link-to 'anything.model' (query-params headlinerField='id')}}
+  id: integer
+{{/link-to}}
 {{#each model.modelObject.klass.attributes as |attr|}}
   <br>
-  {{attr.name}}: {{attr.type}}
+  {{#link-to 'anything.model' (query-params headlinerField=attr.name)}}
+    {{attr.name}}: {{attr.type}}
+  {{/link-to}}
 {{/each}}
 <hr>
 {{outlet}}

@@ -1,5 +1,5 @@
 <ul>
 {{#each model.records as |record|}}
-  <li>{{#link-to 'anything.model.record' record}}{{record.id}}{{/link-to}}</li>
+  <li>{{#link-to 'anything.model.record' record}}{{get record headlinerField}}{{/link-to}}</li>
 {{/each}}
 </ul>
