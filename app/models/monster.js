@@ -10,5 +10,6 @@ export default DS.Model.extend({
   currentTeam: Ember.inject.service(),
   onTeam: Ember.computed('currentTeam.monsters.[]', function(){
     return this.get("currentTeam").includes(this)
-  })
+  }),
+  mainAttribute: Ember.computed.alias('name')
 });

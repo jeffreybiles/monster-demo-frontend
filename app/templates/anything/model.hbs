@@ -3,10 +3,16 @@
 {{#link-to 'anything.model' (query-params headlinerField='id')}}
   id: integer
 {{/link-to}}
-{{#each model.modelObject.klass.attributes as |attr|}}
+{{#each klass.attributes as |attr|}}
   <br>
   {{#link-to 'anything.model' (query-params headlinerField=attr.name)}}
     {{attr.name}}: {{attr.type}}
+  {{/link-to}}
+{{/each}}
+{{#each namedRelationships as |relationship|}}
+  <br>
+  {{#link-to 'anything.model' (query-params headlinerField=relationship.key)}}
+    {{relationship.key}}: {{relationship.kind}} {{relationship.type}}
   {{/link-to}}
 {{/each}}
 <hr>

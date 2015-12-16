@@ -2,3 +2,18 @@
   {{attribute.name}}: {{get model attribute.name}}
   <br>
 {{/each}}
+
+{{#each namedRelationships as |relationship|}}
+  {{relationship.key}}:
+  {{!-- TODO: Make into links --}}
+  {{#if (eq relationship.kind 'belongsTo')}}
+    {{get (get model relationship.key) 'mainAttribute'}}
+  {{else}}
+    <ul>
+    {{#each (get model relationship.key) as |oneOfMany|}}
+      <li>{{oneOfMany.mainAttribute}}</li>
+    {{/each}}
+  </ul>
+  {{/if}}
+  <br>
+{{/each}}
