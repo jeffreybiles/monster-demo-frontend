@@ -1,0 +1,9 @@
+{{#if isEditing}}
+  {{attribute.name}}: {{input value=newValue placeholder=(get model attribute.name)}}
+  <button {{action 'save'}}>Save</button>
+  <button {{action 'cancel'}}>Cancel</button>
+{{else}}
+  <span {{action 'editModel'}}>
+    {{attribute.name}}: {{get model attribute.name}}
+  </span>
+{{/if}}
