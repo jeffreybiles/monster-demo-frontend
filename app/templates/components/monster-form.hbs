@@ -1,11 +1,11 @@
 <div class="monster-card {{if monster.onTeam 'taken'}}">
-  Name: {{input value=monster.name}}
+  Name: <input value={{monster.name}} oninput={{action (mut monster.name) value="target.value"}}>
   <br>
-  Level: {{input value=monster.level}}
+  Level: <input value={{monster.level}} oninput={{action (mut monster.level) value="target.value"}}>
   <br>
   <img src={{monster.imageUrl}} />
   <br>
-  Image Source: {{input value=monster.imageUrl}}
+  Image Source: <input value={{monster.imageUrl}} oninput={{action (mut monster.imageUrl) value="target.value"}}>
   <br>
-  Price (in dollars): {{input value=monster.price}}
+  Price (in dollars): <input value={{monster.price}} oninput={{action (mut monster.price) value="target.value"}}>
 </div>
