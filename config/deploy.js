@@ -1,9 +1,18 @@
 /* jshint node: true */
+require('dotenv').load();
 
 module.exports = function(deployTarget) {
   var ENV = {
-    build: {}
+    build: {},
     // include other plugin configuration that applies to all deploy targets here
+
+    s3: {
+      accessKeyId: process.env.AWS_ACCESS_KEY,
+      secretAccessKey: process.env.AWS_SECRET_KEY,
+      bucket: 'monster-demo',
+      region: 'us-east-1',
+      filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}'
+    }
   };
 
   if (deployTarget === 'development') {
