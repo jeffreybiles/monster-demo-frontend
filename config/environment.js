@@ -20,7 +20,8 @@ module.exports = function(environment) {
     'ember-devtools': {
       global: true,
       enabled: environment === 'development'
-    }
+    },
+    host: ''
   };
 
   if (environment === 'development') {
@@ -44,7 +45,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.host = 'https://quiet-castle-8211.herokuapp.com'
   }
 
   return ENV;
