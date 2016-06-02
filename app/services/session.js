@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ENV from 'ember-2-0-frontend/config/environment';
 
 export default Ember.Service.extend({
   currentUser: null,
@@ -8,7 +9,7 @@ export default Ember.Service.extend({
     return new Promise((resolve, reject)=>{
       Ember.$.ajax({
         method: "POST",
-        url: '/sessions',
+        url: `${ENV.host}/sessions`,
         data: {
           email: userName,
           password: password
@@ -29,7 +30,7 @@ export default Ember.Service.extend({
     return new Promise((resolve, reject)=>{
       Ember.$.ajax({
         method: "POST",
-        url: '/users',
+        url: `${ENV.host}/users`,
         data: {
           email: userName,
           password: password
