@@ -10,8 +10,13 @@ module.exports = function(deployTarget) {
       accessKeyId: process.env.AWS_ACCESS_KEY,
       secretAccessKey: process.env.AWS_SECRET_KEY,
       bucket: 'monster-demo',
-      region: 'us-east-1',
-      filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}'
+      region: 'us-east-1'
+    },
+    's3-index': {
+      accessKeyId: process.env.AWS_ACCESS_KEY,
+      secretAccessKey: process.env.AWS_SECRET_KEY,
+      bucket: 'monster-demo',
+      region: 'us-east-1'
     }
   };
 
