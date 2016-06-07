@@ -4,6 +4,10 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    fingerprint: {
+      prepend: 'https://monster-demo.s3.amazonaws.com/',
+      enabled: true
+    },
     babel: {
       includePolyfill: true
       // optional: ['es7.']
