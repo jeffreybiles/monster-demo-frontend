@@ -11,7 +11,7 @@ module.exports = function(deployTarget) {
       keyPrefix: 'ember-2-0-frontend:index'
     },
     s3: {
-      prefix: 'ember-2-0-frontend'
+      prefix: ''
     }
   };
   if (VALID_DEPLOY_TARGETS.indexOf(deployTarget) === -1) {
@@ -19,18 +19,17 @@ module.exports = function(deployTarget) {
   }
 
   if (deployTarget === 'dev') {
-    ENV.build.environment = 'development';
-    ENV.redis.url = process.env.REDIS_URL || 'redis://0.0.0.0:6379/';
+    ENV.build.environment = 'deploy-dev';
   }
   ENV.s3.accessKeyId = process.env.AWS_ACCESS_KEY;
   ENV.s3.secretAccessKey = process.env.AWS_SECRET_KEY;
   ENV.s3.bucket = 'monster-demo';
   ENV.s3.region = 'us-east-1';
+  ENV.redis.url = process.env.REDIS_URL;
 
   if (deployTarget === 'prod') {
     ENV.build.environment = 'production';
 
-    ENV.redis.url = process.env.PROD_REDIS_URL;
   }
 
   return ENV;
