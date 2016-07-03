@@ -21,7 +21,9 @@
     "andThen",
     "currentURL",
     "currentPath",
-    "currentRouteName"
+    "currentRouteName",
+    "Promise",
+    "Cookies"
   ],
   "node": false,
   "browser": false,

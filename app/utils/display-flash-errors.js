@@ -3,7 +3,7 @@ export default function(errorHash, flashMessages){
   flashMessages.clearMessages();
   errorKeys.forEach((key)=>{
     errorHash[key].forEach((error)=>{
-      flashMessages.danger(`${key} ${error}`, {sticky: true})
-    })
-  })
+      flashMessages.danger(`${key} ${error}`, {sticky: true});
+    });
+  });
 }

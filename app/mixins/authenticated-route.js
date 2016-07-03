@@ -6,7 +6,7 @@ export default Ember.Mixin.create({
     if(!this.get('session.isLoggedIn')){
       var loginController = this.controllerFor('login');
       loginController.set('previousTransition', transition);
-      this.transitionTo('login')
+      this.transitionTo('login');
     }
   }
 });

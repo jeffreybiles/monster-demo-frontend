@@ -21,11 +21,11 @@ export default Ember.Controller.extend(EmberValidations, {
           this.get('flashMessages').success('You have signed in succesfully');
           this.transitionToPreviousRoute();
         }).catch((reason)=>{
-          this.get('flashMessages').danger(reason)
-        })
+          this.get('flashMessages').danger(reason);
+        });
       }).catch((errors)=>{
-        displayFlashErrors(this.get('errors'), this.get('flashMessages'));
-      })
+        displayFlashErrors(errors, this.get('flashMessages'));
+      });
     }
   },
   transitionToPreviousRoute(){
@@ -38,4 +38,4 @@ export default Ember.Controller.extend(EmberValidations, {
       this.transitionToRoute('index');
     }
   },
-})
+});

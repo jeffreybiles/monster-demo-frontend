@@ -17,16 +17,16 @@ export default Ember.Controller.extend(EmberValidations, {
     register(){
       let {userName, password} = this.getProperties('userName', 'password');
       this.validate().then(()=>{
-        return this.get("session").register(userName, password)
+        return this.get("session").register(userName, password);
       }).then(()=>{
-        this.get('flashMessages').success('You have registered successfully')
-        this.transitionToPreviousRoute()
+        this.get('flashMessages').success('You have registered successfully');
+        this.transitionToPreviousRoute();
       }).catch((reason)=>{
-        this.set("showErrors", true)
+        this.set("showErrors", true);
         if(typeof(reason) === 'string'){
-          this.get('flashMessages').danger(reason, {sticky: true})
+          this.get('flashMessages').danger(reason, {sticky: true});
         }
-      })
+      });
     }
   },
 
@@ -40,5 +40,4 @@ export default Ember.Controller.extend(EmberValidations, {
       this.transitionToRoute('index');
     }
   }
-
-})
+});

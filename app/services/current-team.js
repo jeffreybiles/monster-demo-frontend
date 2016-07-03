@@ -8,29 +8,29 @@ export default Ember.Service.extend({
     if (!!teamMemberships){
       return teamMemberships.mapBy('monster');
     } else {
-      return []
+      return [];
     }
   }),
   add(monster){
     if(this.get("fullTeam")){
-      alert('Team is full. Remove a monster to add another.')
+      alert('Team is full. Remove a monster to add another.');
     } else {
       var record = this.get('store').createRecord('team-membership', {
         user: this.get("session.currentUser"),
         monster: monster
-      })
-      record.save()
+      });
+      record.save();
     }
   },
   remove(monster) {
-    var memberships = this.get('session.currentUser.teamMemberships').filterBy('monster.id', monster.id)
+    var memberships = this.get('session.currentUser.teamMemberships').filterBy('monster.id', monster.id);
     // we get an array (usually length 1), so we use forEach
     memberships.forEach(function(membership){
-      membership.destroyRecord()
-    })
+      membership.destroyRecord();
+    });
   },
   includes(monster){
-    return this.get('monsters').mapBy('content').includes(monster)
+    return this.get('monsters').mapBy('content').includes(monster);
   },
   fullTeam: Ember.computed.gte('monsters.length', 6)
 });

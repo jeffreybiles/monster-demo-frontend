@@ -1,6 +1,8 @@
-export function initialize(app) {
+import Ember from 'ember';
+
+export function initialize(/*app*/) {
   Ember.$.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-    var token = Cookies.get('authenticationToken')
+    var token = Cookies.get('authenticationToken');
     if(token){
       jqXHR.setRequestHeader('X-CSRF-Token', token);
     }

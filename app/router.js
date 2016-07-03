@@ -7,10 +7,10 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('monsters', function(){
-    this.route('new')
+    this.route('new');
     this.route('monster', {path: ':monster_id'}, function(){
-      this.route('edit')
-    })
+      this.route('edit');
+    });
   });
   this.route('users');
   this.route('about');
@@ -21,10 +21,10 @@ Router.map(function() {
   this.route('anything', function(){
     this.route('model', {path: ':model_name'}, function(){
       this.route('record', {path: ':record_id'}, function(){
-        
-      })
-    })
-  })
+
+      });
+    });
+  });
 });
 
 export default Router;

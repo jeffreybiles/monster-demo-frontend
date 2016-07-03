@@ -7,4 +7,4 @@ export default OneWayInput.extend({
     '51': 'onthree',
     '9': 'ontab'
   }
-})
+});

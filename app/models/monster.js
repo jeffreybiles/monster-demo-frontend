@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -9,6 +10,6 @@ export default DS.Model.extend({
 
   currentTeam: Ember.inject.service(),
   onTeam: Ember.computed('currentTeam.monsters.[]', function(){
-    return this.get("currentTeam").includes(this)
+    return this.get("currentTeam").includes(this);
   })
 });

@@ -8,16 +8,16 @@ export default Ember.Service.extend({
   isInDollars: Ember.computed.equal('currentCurrency', 'Dollars'),
   exchange(dollarAmount){
     if(this.get('isInDollars')){
-      return dollarAmount
+      return dollarAmount;
     } else {
-      return dollarAmount * this.get('exchangeRate')
+      return dollarAmount * this.get('exchangeRate');
     }
   },
   switchCurrency(){
     if(this.get('isInDollars')){
-      this.set('currentCurrency', 'Yen')
+      this.set('currentCurrency', 'Yen');
     } else {
-      this.set('currentCurrency', 'Dollars')
+      this.set('currentCurrency', 'Dollars');
     }
   },
 });
