@@ -24,7 +24,7 @@ export default Ember.Controller.extend({
         key: attributeName,
         earlierValue: changeAttributes[attributeName][0],
         currentValue: changeAttributes[attributeName][1]
-      }
+      };
     });
     return usableHash;
   })

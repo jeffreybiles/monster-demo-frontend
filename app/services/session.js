@@ -44,8 +44,8 @@ export default Ember.Service.extend({
         resolve();
       }, (response)=>{
         reject(`Server error: ${Ember.get(response, 'responseJSON.error')}`);
-      })
-    })
+      });
+    });
   },
   logout(){
     this.set("currentUser", null);
