@@ -1,6 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="pull-right">
+      {{#link-to 'checkout'}}
+        {{fa-icon 'shopping-cart'}} Items in cart: {{cart.itemCount}}
+      {{/link-to}}
+      &nbsp;&nbsp;&nbsp;
       {{#if session.currentUser}}
         <span {{action 'logout'}} style="cursor: pointer;">Logout {{session.currentUser.email}}</span>
       {{else}}

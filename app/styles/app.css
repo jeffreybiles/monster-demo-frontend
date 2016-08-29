@@ -75,3 +75,21 @@ a {
   color: #000;
   display: block;
 }
+
+.cart {
+  font-size: 18px;
+}
+.cart-item {
+  padding-top: 20px;
+}
+.cart-item .image {
+  float: left;
+  width: 50px;
+  height: 70px;
+
+  margin-right: 20px;
+}
+
+.cart-item img {
+  width: 100%;
+}

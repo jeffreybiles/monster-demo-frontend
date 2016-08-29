@@ -7,6 +7,10 @@
   {{price price=model.price}}
 </div>
 <br>
+<button class="btn" {{action 'buyPlushy'}}>
+  Buy Plushy
+</button>
+
 {{#if model.onTeam}}
   <button class="btn" {{action 'remove'}} style="color: red;">
     Remove from team

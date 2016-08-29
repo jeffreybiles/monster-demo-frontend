@@ -1,12 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  session: Ember.inject.service(),
   cart: Ember.inject.service(),
   actions: {
-    logout(){
-      this.get("session").logout();
-      this.transitionToRoute('login');
+    clear(){
+      this.get('cart').clear()
+    },
+    removeItem(itemId){
+      this.get('cart').remove(itemId);
     }
   }
 });
