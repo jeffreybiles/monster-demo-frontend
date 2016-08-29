@@ -1,8 +1,9 @@
 import Ember from 'ember';
+import { storageFor } from 'ember-local-storage';
 
 export default Ember.Service.extend({
   store: Ember.inject.service(),
-  monsterIds: [1, 2],
+  monsterIds: storageFor('monster-ids'),
   add(monsterId){
     this.get('monsterIds').addObject(monsterId);
   },
@@ -13,11 +14,10 @@ export default Ember.Service.extend({
     this.set('monsterIds', []);
   },
   monsters: Ember.computed('monsterIds.[]', function(){
-    let monsterIds = this.get('monsterIds');
-    if(monsterIds.length == 0){
+    if(this.get('monsterIds.length') == 0){
       return []
     } else {
-      return this.get('store').query('monster', {ids: monsterIds})
+      return this.get('store').query('monster', {ids: this.get('monsterIds.content')})
     }
   }),
   monsterPrices: Ember.computed.mapBy('monsters', 'price'),
