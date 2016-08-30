@@ -1,0 +1,15 @@
+<div class="cart">
+  {{#each cart.monsters as |monster|}}
+    <div class="cart-item">
+      <div class="image">
+        <img src={{monster.imageUrl}} />
+      </div>
+      <div class="details">
+        {{monster.name}}
+        <br>
+        ${{monster.price}}
+      </div>
+      <button {{action 'removeItem' monster.id}}>Remove</button>
+    </div>
+  {{/each}}
+</div>
