@@ -12,4 +12,7 @@
       <button {{action 'removeItem' monster.id}}>Remove</button>
     </div>
   {{/each}}
+  <button {{action 'clear'}}>Clear Cart</button>
+  <hr>
+  Total: ${{cart.total}}
 </div>

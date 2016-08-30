@@ -5,6 +5,9 @@ export default Ember.Controller.extend({
   actions: {
     removeItem(monsterId){
       this.get('cart').remove(monsterId)
+    },
+    clear(){
+      this.get('cart').clear()
     }
   }
 });
