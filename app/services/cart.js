@@ -21,5 +21,8 @@ export default Ember.Service.extend({
   total: Ember.computed.sum('monsterPrices'),
   clear(){
     this.get('monsterIds').clear()
-  }
+  },
+  centsTotal: Ember.computed('total', function(){
+    return this.get('total') * 100;
+  })
 });

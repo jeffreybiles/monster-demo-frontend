@@ -16,3 +16,9 @@
   <hr>
   Total: ${{cart.total}}
 </div>
+{{stripe-checkout
+  name="Cute Monsters Inc."
+  description="Buy cute monster plushies."
+  amount=cart.centsTotal
+  action="processStripeToken"
+}}
