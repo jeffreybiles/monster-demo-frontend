@@ -7,10 +7,15 @@
   {{price price=model.price}}
 </div>
 <br>
-<button class="btn" {{action 'buyItem'}}>
-  Buy Plushy
-</button>
-
+{{#if (contains model.id cart.monsterIds.content)}}
+  <button class="btn">
+    Sold Out
+  </button>
+{{else}}
+  <button class="btn" {{action 'buyItem'}}>
+    Buy Plushy
+  </button>
+{{/if}}
 {{#if model.onTeam}}
   <button class="btn" {{action 'remove'}} style="color: red;">
     Remove from team
