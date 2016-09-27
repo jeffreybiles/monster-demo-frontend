@@ -17,11 +17,11 @@ export default Ember.Service.extend({
   remove(monsterId){
     this.get('monsterIds').removeObject(parseInt(monsterId));
   },
-  monsterPrices: Ember.computed.mapBy('monsters', 'price'),
-  total: Ember.computed.sum('monsterPrices'),
   clear(){
     this.get('monsterIds').clear()
   },
+  monsterPrices: Ember.computed.mapBy('monsters', 'price'),
+  total: Ember.computed.sum('monsterPrices'),
   centsTotal: Ember.computed('total', function(){
     return this.get('total') * 100;
   })

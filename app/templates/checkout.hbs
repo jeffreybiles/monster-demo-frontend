@@ -14,11 +14,22 @@
   {{/each}}
   <button {{action 'clear'}}>Clear Cart</button>
   <hr>
-  Total: ${{cart.total}}
+  {{let subtotal=cart.total}}
+  Subtotal: ${{subtotal}}
+  <br>
+  {{let taxes=(mult subtotal 0.08)}}
+  Taxes: ${{taxes}}
+  <br>
+  {{let shipping=(add 2.99 (mult 1.29 cart.monsters.length))}}
+  Shipping: ${{shipping}}
+  <br>
+  {{let total=(add subtotal taxes shipping)}}
+  Total: ${{total}}
+  {{let centsTotal=(mult 100 total)}}
+  {{stripe-checkout
+    name="Cute Monsters Inc."
+    description="Buy cute monster plushies."
+    amount=centsTotal
+    action="processStripeToken"
+  }}
 </div>
-{{stripe-checkout
-  name="Cute Monsters Inc."
-  description="Buy cute monster plushies."
-  amount=cart.centsTotal
-  action="processStripeToken"
-}}
