@@ -14,6 +14,9 @@
   {{/each}}
   <button {{action 'clear'}}>Clear Cart</button>
   <hr>
+  When do you need this to arrive by?
+  {{pikaday-input value=arriveDate onSelection=(action (mut arriveDate)) format="MM/DD/YYYY" readonly=true}}
+  <hr>
   {{let subtotal=cart.total}}
   Subtotal: ${{subtotal}}
   <br>

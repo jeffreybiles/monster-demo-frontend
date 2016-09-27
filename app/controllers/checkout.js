@@ -21,5 +21,10 @@ export default Ember.Controller.extend({
 
       })
     }
-  }
+  },
+  arriveDate: Ember.computed(function(){
+    let date = new Date();
+    date.setDate(date.getDate() + 2);
+    return date
+  })
 });
